@@ -649,4 +649,24 @@ void ComposerClient::destroyResources() {
     return binder;
 }
 
+ndk::ScopedAStatus ComposerClient::getMaxLayerPictureProfiles(int64_t in_display, int32_t* _aidl_return) {
+    DEBUG_DISPLAY_FUNC(in_display);
+    return TO_BINDER_STATUS(EX_UNSUPPORTED_OPERATION);
+}
+
+ndk::ScopedAStatus ComposerClient::startHdcpNegotiation(int64_t in_display, const ::aidl::android::hardware::drm::HdcpLevels& in_levels) {
+    DEBUG_DISPLAY_FUNC(in_display);
+    return TO_BINDER_STATUS(EX_UNSUPPORTED_OPERATION);
+}
+
+ndk::ScopedAStatus ComposerClient::getLuts(int64_t in_display, const std::vector<::aidl::android::hardware::graphics::composer3::Buffer>& in_buffers, std::vector<::aidl::android::hardware::graphics::composer3::Luts>* _aidl_return) {
+    DEBUG_DISPLAY_FUNC(in_display);
+    return TO_BINDER_STATUS(EX_UNSUPPORTED_OPERATION);
+}
+
+ndk::ScopedAStatus ComposerClient::getDisplayKnownVsyncSample(int64_t in_display, ::aidl::android::hardware::graphics::composer3::VsyncSample* _aidl_return) {
+    DEBUG_DISPLAY_FUNC(in_display);
+    return TO_BINDER_STATUS(EX_UNSUPPORTED_OPERATION);
+}
+
 } // namespace aidl::android::hardware::graphics::composer3::impl

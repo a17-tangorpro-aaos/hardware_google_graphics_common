@@ -142,6 +142,10 @@ public:
     ndk::ScopedAStatus notifyExpectedPresent(int64_t display,
                                              const ClockMonotonicTimestamp& expectedPresentTime,
                                              int32_t frameIntervalNs) override;
+    ndk::ScopedAStatus getMaxLayerPictureProfiles(int64_t in_display, int32_t* _aidl_return) override;
+    ndk::ScopedAStatus startHdcpNegotiation(int64_t in_display, const ::aidl::android::hardware::drm::HdcpLevels& in_levels) override;
+    ndk::ScopedAStatus getLuts(int64_t in_display, const std::vector<::aidl::android::hardware::graphics::composer3::Buffer>& in_buffers, std::vector<::aidl::android::hardware::graphics::composer3::Luts>* _aidl_return) override;
+    ndk::ScopedAStatus getDisplayKnownVsyncSample(int64_t in_display, ::aidl::android::hardware::graphics::composer3::VsyncSample* _aidl_return) override;
 
 protected:
     ::ndk::SpAIBinder createBinder() override;

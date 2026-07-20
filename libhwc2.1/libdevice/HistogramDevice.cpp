@@ -1036,7 +1036,7 @@ int HistogramDevice::parseContextDrmEvent(const void* const event, uint32_t& blo
 }
 #endif
 
-std::set<const uint8_t>::iterator HistogramDevice::cleanupChannelInfo(const uint8_t channelId) {
+std::set<uint8_t>::iterator HistogramDevice::cleanupChannelInfo(const uint8_t channelId) {
     mChannels[channelId].mStatus = ChannelStatus_t::DISABLE_PENDING;
     mChannels[channelId].mConfigInfo.reset();
     mFreeChannels.push_back(channelId);
@@ -1109,7 +1109,7 @@ void HistogramDevice::clearChannelConfigBlob(
     }
 }
 
-uint32_t HistogramDevice::getMatchBlobId(std::list<const BlobInfo>& blobsList,
+uint32_t HistogramDevice::getMatchBlobId(std::list<BlobInfo>& blobsList,
                                          const int displayActiveH, const int displayActiveV,
                                          bool& isPositionChanged) const {
     auto resultIt = blobsList.end();
@@ -1132,7 +1132,7 @@ uint32_t HistogramDevice::getMatchBlobId(std::list<const BlobInfo>& blobsList,
     return blobsList.begin()->mBlob->getId();
 }
 
-uint32_t HistogramDevice::getActiveBlobId(const std::list<const BlobInfo>& blobsList) const {
+uint32_t HistogramDevice::getActiveBlobId(const std::list<BlobInfo>& blobsList) const {
     return blobsList.empty() ? 0 : blobsList.begin()->mBlob->getId();
 }
 

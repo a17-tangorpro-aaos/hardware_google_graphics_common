@@ -25,6 +25,7 @@ cc_library {
         "dmabuf_container.c",
     ],
     shared_libs: ["liblog","libdmabufheap"],
+    header_libs: ["libion_headers"],
     local_include_dirs: [
         "include",
     ],
